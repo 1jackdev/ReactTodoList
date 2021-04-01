@@ -3,62 +3,102 @@
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="container"
+    class="container col-sm-10 col-lg-8 pt-5"
   >
     <form>
-      <label
-        for="text"
+      <div
+        class="form-group d-flex"
       >
-        Todo
-      </label>
-      <input
-        id="text"
-        name="text"
-        placeholder="Walk the dog"
-        type="text"
-        value=""
-      />
-      <button>
-        Add Todo
-      </button>
+        <label
+          for="text"
+        />
+        <input
+          class="form-control"
+          id="text"
+          name="text"
+          placeholder="Walk the dog"
+          required=""
+          type="text"
+          value=""
+        />
+        <button
+          class="btn btn-primary col-sm-4 col-md-2"
+        >
+          Add Todo
+        </button>
+      </div>
     </form>
-    <ul
-      class="todo-list"
+    <div
+      class="container pt-4"
     >
-      <li
-        class="todo-container"
+      <ul
+        class="list-group "
       >
-        Walk the dog
-      </li>
-      <button
-        class="btn"
-        type="button"
-      >
-        X
-      </button>
-      <li
-        class="todo-container"
-      >
-        Get groceries
-      </li>
-      <button
-        class="btn"
-        type="button"
-      >
-        X
-      </button>
-      <li
-        class="todo-container"
-      >
-        Do the dishes
-      </li>
-      <button
-        class="btn"
-        type="button"
-      >
-        X
-      </button>
-    </ul>
+        <div
+          class="mt-2 w-100 d-flex list-group-item row justify-content-around"
+        >
+          <div
+            class="bg-light col-sm-7 col-lg-8"
+          >
+            Walk the dog
+          </div>
+          <button
+            class="btn btn-success col-sm-2 col-lg-1"
+            type="button"
+          >
+            Edit
+          </button>
+          <button
+            class="btn btn-danger col-sm-3 col-lg-2"
+            type="button"
+          >
+            Remove
+          </button>
+        </div>
+        <div
+          class="mt-2 w-100 d-flex list-group-item row justify-content-around"
+        >
+          <div
+            class="bg-light col-sm-7 col-lg-8"
+          >
+            Get groceries
+          </div>
+          <button
+            class="btn btn-success col-sm-2 col-lg-1"
+            type="button"
+          >
+            Edit
+          </button>
+          <button
+            class="btn btn-danger col-sm-3 col-lg-2"
+            type="button"
+          >
+            Remove
+          </button>
+        </div>
+        <div
+          class="mt-2 w-100 d-flex list-group-item row justify-content-around"
+        >
+          <div
+            class="bg-light col-sm-7 col-lg-8"
+          >
+            Do the dishes
+          </div>
+          <button
+            class="btn btn-success col-sm-2 col-lg-1"
+            type="button"
+          >
+            Edit
+          </button>
+          <button
+            class="btn btn-danger col-sm-3 col-lg-2"
+            type="button"
+          >
+            Remove
+          </button>
+        </div>
+      </ul>
+    </div>
   </div>
 </DocumentFragment>
 `;

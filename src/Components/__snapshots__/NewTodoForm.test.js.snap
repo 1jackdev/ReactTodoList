@@ -3,21 +3,27 @@
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <form>
-    <label
-      for="text"
+    <div
+      class="form-group d-flex"
     >
-      Todo
-    </label>
-    <input
-      id="text"
-      name="text"
-      placeholder="Walk the dog"
-      type="text"
-      value=""
-    />
-    <button>
-      Add Todo
-    </button>
+      <label
+        for="text"
+      />
+      <input
+        class="form-control"
+        id="text"
+        name="text"
+        placeholder="Walk the dog"
+        required=""
+        type="text"
+        value=""
+      />
+      <button
+        class="btn btn-primary col-sm-4 col-md-2"
+      >
+        Add Todo
+      </button>
+    </div>
   </form>
 </DocumentFragment>
 `;
