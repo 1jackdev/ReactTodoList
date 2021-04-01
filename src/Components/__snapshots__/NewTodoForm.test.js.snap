@@ -10,6 +10,7 @@ exports[`matches snapshot 1`] = `
         for="text"
       />
       <input
+        alt="todo-input"
         class="form-control"
         id="text"
         name="text"

@@ -2,21 +2,13 @@ import React from "react";
 import { render, fireEvent, queryByText } from "@testing-library/react";
 import TodoList from "./TodoList";
 
-// function addBox(
-//   boxList,
-//   height = "100",
-//   width = "100",
-//   backgroundColor = "peachpuff"
-// ) {
-//   const heightInput = boxList.getByLabelText("Height");
-//   const widthInput = boxList.getByLabelText("Width");
-//   const backgroundInput = boxList.getByLabelText("Background Color");
-//   fireEvent.change(backgroundInput, { target: { value: backgroundColor } });
-//   fireEvent.change(widthInput, { target: { value: width } });
-//   fireEvent.change(heightInput, { target: { value: height } });
-//   const button = boxList.getByText("Add Box");
-//   fireEvent.click(button);
-// }
+function addTodo(todoList, text = "walk the dog") {
+  const textInput = todoList.getByAltText("todo-input");
+  fireEvent.change(textInput, { target: { value: text } });
+
+  const button = todoList.getByText("Add Todo");
+  fireEvent.submit(button);
+}
 
 it("renders without crashing", () => {
   render(<TodoList />);
@@ -27,28 +19,25 @@ it("matches snapshot", () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-// it("adds a new box", () => {
-//   const boxList = render(<BoxList />);
+it("adds a new todo", () => {
+  const todoList = render(<TodoList />);
 
-//   expect(boxList.queryByText("X")).not.toBeInTheDocument();
+  expect(todoList.queryByText("Remove")).not.toBeInTheDocument();
 
-//   addBox(boxList);
+  addTodo(todoList);
 
-//   const removeButton = boxList.getByText("X");
-//   expect(removeButton).toBeInTheDocument();
-//   expect(removeButton.nextSibling).toHaveStyle(`
-//     width: 100px;
-//     height: 100px;
-//     background-color: peachpuff;
-//   `);
-// });
+  const removeButton = todoList.getByText("Remove");
+  expect(removeButton).toBeInTheDocument();
 
-// it("can remove a box", ()=>{
-//   const boxList = render(<BoxList />);
-//   addBox(boxList);
+  expect(removeButton.previousSibling).toHaveTextContent("walk the dog");
+});
 
-//   const removeButton = boxList.getByText("X");
-//   fireEvent.click(removeButton)
+it("can remove a todo", () => {
+  const todoList = render(<TodoList />);
+  addTodo(todoList);
 
-//   expect(removeButton).not.toBeInTheDocument()
-// })
+  const removeButton = todoList.getByText("Remove");
+  fireEvent.click(removeButton);
+
+  expect(removeButton).not.toBeInTheDocument();
+});

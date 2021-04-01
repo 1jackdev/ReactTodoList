@@ -30,6 +30,7 @@ const NewTodoForm = ({ addTodo }) => {
           type="text"
           name="text"
           placeholder="Walk the dog"
+          alt="todo-input"
           value={formData.text}
           onChange={handleChange}
           required
