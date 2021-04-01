@@ -1,17 +1,17 @@
 import { React } from "react";
 
-
 const Todo = ({ id, text, handleRemove }) => {
   const remove = () => handleRemove(id);
   return (
-    <>
-      <li key={id} className="todo-container">
+    <div className="mt-2 w-100 d-flex list-group-item row justify-content-around">
+      <div className="bg-light col-sm-7 col-lg-8" key={id}>
         {text}
-      </li>
-      <button type="button" onClick={remove} className="btn">
-        X
+      </div>
+      <button type="button" className="btn btn-success col-sm-2 col-lg-1">Edit</button>
+      <button type="button" onClick={remove} className="btn btn-danger col-sm-3 col-lg-2">
+        Remove
       </button>
-    </>
+    </div>
   );
 };
 

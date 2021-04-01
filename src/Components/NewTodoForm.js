@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 
-const NewTodoForm = ({ addBox }) => {
+const NewTodoForm = ({ addTodo }) => {
   const INITIAL_STATE = {
     text: "",
   };
@@ -17,21 +17,25 @@ const NewTodoForm = ({ addBox }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { text } = formData;
-    addBox(text);
+    addTodo(text);
     setFormData(INITIAL_STATE);
   };
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="text">Todo</label>
-      <input
-        id="text"
-        type="text"
-        name="text"
-        placeholder="Walk the dog"
-        value={formData.text}
-        onChange={handleChange}
-      />
-      <button>Add Todo</button>
+      <div className="form-group d-flex">
+        <label htmlFor="text"></label>
+        <input
+          className="form-control"
+          id="text"
+          type="text"
+          name="text"
+          placeholder="Walk the dog"
+          value={formData.text}
+          onChange={handleChange}
+          required
+        />
+        <button className="btn btn-primary col-sm-4 col-md-2">Add Todo</button>
+      </div>
     </form>
   );
 };

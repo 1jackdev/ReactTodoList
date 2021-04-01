@@ -2,22 +2,22 @@ import { React, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Todo from "./Todo";
 import NewTodoForm from "./NewTodoForm";
-
+import "./TodoList.css";
 
 const TodoList = () => {
   const INITIAL_STATE = [
-      {
-        id: uuidv4(),
-        text: "Walk the dog"
-      },
-      {
-        id: uuidv4(),
-        text: "Get groceries"
-      },
-      {
-        id: uuidv4(),
-        text: "Do the dishes"
-      },
+    {
+      id: uuidv4(),
+      text: "Walk the dog",
+    },
+    {
+      id: uuidv4(),
+      text: "Get groceries",
+    },
+    {
+      id: uuidv4(),
+      text: "Do the dishes",
+    },
   ];
   const [todoList, setTodoList] = useState(INITIAL_STATE);
 
@@ -28,17 +28,19 @@ const TodoList = () => {
   function handleRemove(id) {
     const newTodoList = todoList.filter((todo) => todo.id !== id);
 
-    setBoxList(newTodoList);
+    setTodoList(newTodoList);
   }
 
   return (
-    <div className="container">
+    <div className="container col-sm-10 col-lg-8 pt-5">
       <NewTodoForm addTodo={addTodo} />
-      <ul className="todo-list">
-        {todoList.map(({ id, text }) => (
-          <Todo key={id} id={id} text={text} handleRemove={handleRemove} />
-        ))}
-      </ul>
+      <div className="container pt-4">
+        <ul className="list-group ">
+          {todoList.map(({ id, text }) => (
+            <Todo key={id} id={id} text={text} handleRemove={handleRemove} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
