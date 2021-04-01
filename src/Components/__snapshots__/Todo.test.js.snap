@@ -9,12 +9,6 @@ exports[`matches snapshot 1`] = `
       class="bg-light col-sm-7 col-lg-8"
     />
     <button
-      class="btn btn-success col-sm-2 col-lg-1"
-      type="button"
-    >
-      Edit
-    </button>
-    <button
       class="btn btn-danger col-sm-3 col-lg-2"
       type="button"
     >
