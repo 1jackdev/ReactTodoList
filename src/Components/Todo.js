@@ -1,5 +1,5 @@
 import { React } from "react";
-import "./Todo.css";
+
 
 const Todo = ({ id, text, handleRemove }) => {
   const remove = () => handleRemove(id);

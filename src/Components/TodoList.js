@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Todo from "./Todo";
 import NewTodoForm from "./NewTodoForm";
-import "./TodoList.css";
+
 
 const TodoList = () => {
   const INITIAL_STATE = [
@@ -36,7 +36,7 @@ const TodoList = () => {
       <NewTodoForm addTodo={addTodo} />
       <ul className="todo-list">
         {todoList.map(({ id, text }) => (
-          <Box key={id} id={id} text={text} handleRemove={handleRemove} />
+          <Todo key={id} id={id} text={text} handleRemove={handleRemove} />
         ))}
       </ul>
     </div>
