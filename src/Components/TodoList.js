@@ -31,10 +31,6 @@ const TodoList = () => {
     setTodoList(newTodoList);
   }
 
-  function handleEdit(id, text) {
-    const todoToEdit = todoList.filter((todo) => todo.id === id);
-  }
-
   return (
     <div className="container col-sm-10 col-lg-8 pt-5">
       <NewTodoForm addTodo={addTodo} />

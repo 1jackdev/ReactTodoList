@@ -7,7 +7,6 @@ const Todo = ({ id, text, handleRemove }) => {
       <div className="bg-light col-sm-7 col-lg-8" key={id}>
         {text}
       </div>
-      <button type="button" className="btn btn-success col-sm-2 col-lg-1">Edit</button>
       <button type="button" onClick={remove} className="btn btn-danger col-sm-3 col-lg-2">
         Remove
       </button>
